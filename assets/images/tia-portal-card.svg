@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title id="title">TIA Portal card</title>
+  <desc id="desc">Stylized TIA Portal software card for industrial automation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0b1017"/>
+      <stop offset="1" stop-color="#0a2b50"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" x2="1">
+      <stop offset="0" stop-color="#54d6ff"/>
+      <stop offset="1" stop-color="#baf7ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="34" fill="url(#bg)"/>
+  <g opacity=".12" stroke="#8fcbff">
+    <path d="M54 72h532"/>
+    <path d="M54 126h532"/>
+    <path d="M54 180h532"/>
+    <path d="M54 234h532"/>
+    <path d="M54 288h532"/>
+    <path d="M54 342h532"/>
+  </g>
+  <text x="56" y="90" fill="#eaf9ff" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700" letter-spacing="6">TIA PORTAL</text>
+  <text x="58" y="128" fill="#8fdfff" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="4">ENGINEERING SUITE</text>
+  <g transform="translate(146 168)">
+    <circle cx="174" cy="74" r="82" fill="none" stroke="url(#ring)" stroke-width="18"/>
+    <circle cx="174" cy="74" r="46" fill="none" stroke="#ffb750" stroke-width="10"/>
+    <circle cx="174" cy="74" r="14" fill="#dffcff"/>
+    <path d="M174 0v42M248 74h42M174 148v42M100 74H58" stroke="#9ae8ff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M110 20l28 28M238 20l-28 28M110 128l28-28M238 128l-28-28" stroke="#55d2ff" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(88 308)" fill="#dffcff">
+    <rect width="114" height="36" rx="18" fill="#102d45" stroke="#54d6ff"/>
+    <text x="24" y="24" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="3">STEP 7</text>
+  </g>
+  <g transform="translate(258 308)" fill="#dffcff">
+    <rect width="122" height="36" rx="18" fill="#102d45" stroke="#54d6ff"/>
+    <text x="22" y="24" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="3">WINCC</text>
+  </g>
+  <g transform="translate(436 308)" fill="#dffcff">
+    <rect width="122" height="36" rx="18" fill="#102d45" stroke="#54d6ff"/>
+    <text x="19" y="24" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="3">SAFETY</text>
+  </g>
+</svg>

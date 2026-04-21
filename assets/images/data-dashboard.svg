@@ -1,0 +1,48 @@
+<svg width="800" height="560" viewBox="0 0 800 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="95" y1="31" x2="683" y2="505" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7EFE5"/>
+      <stop offset="1" stop-color="#E8DFD2"/>
+    </linearGradient>
+    <linearGradient id="chart" x1="146" y1="353" x2="632" y2="169" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFB048"/>
+      <stop offset="1" stop-color="#18BFD6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="560" rx="34" fill="url(#bg)"/>
+  <rect x="34" y="34" width="732" height="492" rx="26" stroke="#101922" stroke-opacity=".08"/>
+  <rect x="86" y="92" width="262" height="168" rx="26" fill="#FFFFFF" stroke="#101922" stroke-opacity=".08"/>
+  <rect x="380" y="92" width="334" height="168" rx="26" fill="#FFFFFF" stroke="#101922" stroke-opacity=".08"/>
+  <rect x="86" y="286" width="628" height="186" rx="28" fill="#FFFFFF" stroke="#101922" stroke-opacity=".08"/>
+  <path d="M118 210H190" stroke="#101922" stroke-opacity=".16" stroke-width="14" stroke-linecap="round"/>
+  <path d="M118 182H220" stroke="#101922" stroke-opacity=".09" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="234" cy="170" r="54" fill="#0E2134"/>
+  <path d="M234 116C250.8 116 266.912 122.674 278.794 134.556C290.676 146.438 297.35 162.55 297.35 179.35H234V116Z" fill="#FFB048"/>
+  <path d="M234 242C216.99 242 200.361 236.958 186.215 227.511C172.068 218.063 161.042 204.633 154.531 188.918L214.716 164.001L234 242Z" fill="#7AE7FF"/>
+  <path d="M234 242L214.716 164.001L154.531 188.918C149.722 177.307 147.247 164.862 147.247 152.295C147.247 139.728 149.722 127.283 154.531 115.672C159.341 104.062 166.39 93.5124 175.276 84.6267C184.161 75.741 194.711 68.6919 206.322 63.8824L234 116V242Z" fill="#10263A" fill-opacity=".9"/>
+  <g>
+    <path d="M424 220H666" stroke="#101922" stroke-opacity=".1" stroke-width="2"/>
+    <path d="M424 178H666" stroke="#101922" stroke-opacity=".1" stroke-width="2"/>
+    <path d="M424 136H666" stroke="#101922" stroke-opacity=".1" stroke-width="2"/>
+    <path d="M424 218L468 182L512 196L562 134L612 154L666 120" stroke="url(#chart)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="468" cy="182" r="10" fill="#FFB048"/>
+    <circle cx="512" cy="196" r="10" fill="#FFB048"/>
+    <circle cx="562" cy="134" r="10" fill="#18BFD6"/>
+    <circle cx="612" cy="154" r="10" fill="#18BFD6"/>
+    <circle cx="666" cy="120" r="10" fill="#18BFD6"/>
+  </g>
+  <g>
+    <rect x="126" y="330" width="116" height="22" rx="11" fill="#101922" fill-opacity=".08"/>
+    <rect x="126" y="364" width="260" height="18" rx="9" fill="#101922" fill-opacity=".06"/>
+    <rect x="458" y="338" width="196" height="14" rx="7" fill="#101922" fill-opacity=".08"/>
+    <rect x="458" y="364" width="146" height="14" rx="7" fill="#101922" fill-opacity=".06"/>
+  </g>
+  <g>
+    <rect x="128" y="408" width="56" height="28" rx="10" fill="#0E2134"/>
+    <rect x="200" y="386" width="56" height="50" rx="10" fill="#18BFD6"/>
+    <rect x="272" y="366" width="56" height="70" rx="10" fill="#FFB048"/>
+    <rect x="344" y="346" width="56" height="90" rx="10" fill="#0E2134" fill-opacity=".86"/>
+    <path d="M458 420C490 396 528 384 570 384C604 384 638 392 670 408" stroke="#FFB048" stroke-width="8" stroke-linecap="round"/>
+    <path d="M458 438C492 424 528 418 566 418C610 418 646 426 672 444" stroke="#18BFD6" stroke-width="8" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title id="title">Instrumentation card</title>
+  <desc id="desc">Stylized instrumentation and sensors card.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#14110d"/>
+      <stop offset="1" stop-color="#4f3410"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="34" fill="url(#bg)"/>
+  <text x="56" y="90" fill="#ffd58c" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700" letter-spacing="5">INSTRUMENTATION</text>
+  <text x="58" y="126" fill="#fff0d2" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="4">CAPTEURS + MESURE + MAINTENANCE</text>
+  <g transform="translate(74 174)">
+    <circle cx="78" cy="84" r="58" fill="#261a0d" stroke="#ffb750" stroke-width="6"/>
+    <path d="M78 84l30-28" stroke="#ffcf87" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="78" cy="84" r="10" fill="#ffcf87"/>
+    <g stroke="#7ff6ff" stroke-width="6" stroke-linecap="round">
+      <path d="M214 40v112"/>
+      <path d="M188 64h52"/>
+      <path d="M188 128h52"/>
+    </g>
+    <rect x="278" y="22" width="72" height="126" rx="22" fill="#17252a" stroke="#55d2ff" stroke-width="4"/>
+    <rect x="296" y="42" width="36" height="70" rx="18" fill="#0fe0d4" opacity=".82"/>
+    <path d="M432 136c28-24 48-78 82-78 24 0 40 16 40 36 0 26-18 34-34 42-12 6-24 14-34 26" fill="none" stroke="#8ef4d7" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="432" cy="136" r="14" fill="#8ef4d7"/>
+  </g>
+  <g opacity=".18" stroke="#fff0d2">
+    <path d="M48 344h544"/>
+    <path d="M48 302h544"/>
+    <path d="M48 260h544"/>
+  </g>
+</svg>

@@ -1,0 +1,1710 @@
+@font-face {
+  font-family: "Bahnschrift Local";
+  src: url("assets/fonts/bahnschrift.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Candara Local";
+  src: url("assets/fonts/candara.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Candara Local";
+  src: url("assets/fonts/candarab.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --bg: #050a0e;
+  --bg-soft: #09121a;
+  --panel: rgba(10, 18, 26, 0.92);
+  --panel-soft: rgba(255, 255, 255, 0.04);
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(109, 227, 255, 0.24);
+  --text: #eef6f7;
+  --text-soft: rgba(238, 246, 247, 0.72);
+  --text-faint: rgba(238, 246, 247, 0.54);
+  --amber: #ffb12a;
+  --amber-soft: #ffd474;
+  --cyan: #6de3ff;
+  --cyan-soft: #9eefff;
+  --green: #79efbc;
+  --shadow: 0 32px 80px rgba(0, 0, 0, 0.34);
+  --radius-xl: 32px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --content-width: min(1220px, calc(100vw - 2rem));
+  --transition: 220ms ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: "Candara Local", "Segoe UI", sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  background:
+    radial-gradient(circle at top right, rgba(255, 177, 42, 0.14), transparent 22%),
+    radial-gradient(circle at left 18%, rgba(109, 227, 255, 0.12), transparent 24%),
+    linear-gradient(180deg, #05090c 0%, #081219 35%, #05090d 100%);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p,
+ul,
+h1,
+h2,
+h3,
+h4,
+figure {
+  margin: 0;
+}
+
+ul {
+  padding-left: 1.1rem;
+}
+
+.site-noise,
+.site-grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.site-noise {
+  opacity: 0.16;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08) 0 0.6px, transparent 0.6px),
+    radial-gradient(circle at 70% 58%, rgba(255, 255, 255, 0.08) 0 0.7px, transparent 0.7px);
+  background-size: 16px 16px, 24px 24px;
+}
+
+.site-grid {
+  opacity: 0.1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 88px 88px;
+  mask-image: linear-gradient(180deg, black, rgba(0, 0, 0, 0.12));
+}
+
+.section-inner,
+.topbar,
+.footer {
+  width: var(--content-width);
+  margin: 0 auto;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(5, 10, 14, 0.82);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.24rem;
+  width: 2.9rem;
+  height: 2.9rem;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  cursor: pointer;
+  transition:
+    border-color var(--transition),
+    background var(--transition),
+    transform var(--transition);
+}
+
+.menu-toggle:hover {
+  border-color: var(--line-strong);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.menu-toggle-line {
+  display: block;
+  width: 1.05rem;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition:
+    transform var(--transition),
+    opacity var(--transition);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  color: var(--bg);
+  font: 700 1rem/1 "Bahnschrift Local", "Trebuchet MS", sans-serif;
+  background: linear-gradient(135deg, var(--amber), var(--cyan));
+}
+
+.brand-text {
+  display: grid;
+  gap: 0.08rem;
+}
+
+.brand-text strong,
+.topnav,
+.button,
+.eyebrow,
+.section-kicker,
+.section-index,
+.highlight-label,
+.console-kicker,
+.capability-kicker,
+.log-company,
+.log-date,
+.system-meta,
+.system-subtitle,
+.dossier-date,
+.dossier-title,
+.stack-title,
+.footer {
+  font-family: "Bahnschrift Local", "Trebuchet MS", sans-serif;
+}
+
+.brand-text strong {
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.brand-text small {
+  color: var(--text-faint);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.topnav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: var(--text-faint);
+  text-align: center;
+  transition: color var(--transition);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  background: linear-gradient(90deg, var(--amber), var(--cyan));
+  transition: transform var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+  color: var(--text);
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.8rem 1.35rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    background-color var(--transition),
+    color var(--transition);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  color: var(--bg);
+  background: linear-gradient(135deg, var(--amber), var(--amber-soft));
+  box-shadow: 0 18px 34px rgba(255, 177, 42, 0.2);
+}
+
+.button-secondary,
+.button-ghost {
+  border-color: var(--line);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.eyebrow,
+.section-kicker {
+  margin-bottom: 1rem;
+  color: var(--amber-soft);
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Bahnschrift Local", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  max-width: 11ch;
+  margin-bottom: 1.2rem;
+  font-size: clamp(3rem, 8vw, 6.2rem);
+  line-height: 0.92;
+}
+
+.hero-lead,
+.section-intro,
+.profile-text p,
+.detail-list,
+.log-summary,
+.log-note,
+.system-text,
+.dossier-text,
+.contact-links a {
+  color: var(--text-soft);
+  font-size: 1.02rem;
+}
+
+.hero-status {
+  display: inline-flex;
+  max-width: min(100%, 40rem);
+  margin: 0.2rem 0 0;
+  padding: 0.7rem 0.95rem;
+  border: 1px solid rgba(109, 227, 255, 0.22);
+  border-radius: 1rem;
+  background: rgba(109, 227, 255, 0.08);
+  color: var(--cyan-soft);
+  font: 700 0.88rem/1.45 "Bahnschrift Local", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.section {
+  padding: 5.6rem 0;
+}
+
+.section-contrast {
+  background:
+    radial-gradient(circle at top right, rgba(109, 227, 255, 0.06), transparent 22%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+  will-change: opacity, transform;
+  transition:
+    opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-reveal="left"] {
+  transform: translateX(-34px);
+}
+
+[data-reveal="right"] {
+  transform: translateX(34px);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.hero {
+  position: relative;
+  overflow: clip;
+  padding: 3.15rem 0 2rem;
+}
+
+.hero-layers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-orb,
+.hero-stripes {
+  position: absolute;
+}
+
+.hero-orb {
+  border-radius: 50%;
+  filter: blur(16px);
+}
+
+.hero-orb-a {
+  top: 3rem;
+  right: 8%;
+  width: 28rem;
+  height: 28rem;
+  background: radial-gradient(circle, rgba(255, 177, 42, 0.22), transparent 70%);
+  animation: drift 13s ease-in-out infinite;
+}
+
+.hero-orb-b {
+  left: -4rem;
+  bottom: 5rem;
+  width: 22rem;
+  height: 22rem;
+  background: radial-gradient(circle, rgba(109, 227, 255, 0.16), transparent 72%);
+  animation: drift 17s ease-in-out infinite reverse;
+}
+
+.hero-stripes {
+  inset: 7rem 0 auto auto;
+  width: 24rem;
+  height: 24rem;
+  opacity: 0.16;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255, 177, 42, 0.5) 0 12px,
+    transparent 12px 26px
+  );
+  mask-image: radial-gradient(circle at center, black 26%, transparent 76%);
+}
+
+.hero-watermark {
+  position: absolute;
+  left: 50%;
+  top: 7.5rem;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.03);
+  font: 700 clamp(4rem, 14vw, 12rem) / 0.9 "Bahnschrift Local", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero-shell {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin: 2rem 0 1.35rem;
+}
+
+.hero-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-contact li {
+  padding: 0.58rem 0.88rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.hero-contact a:hover,
+.contact-links a:hover {
+  color: var(--amber-soft);
+}
+
+.hero-contact a,
+.contact-links a {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.hero-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1rem;
+  margin-top: 1.7rem;
+}
+
+.hero-values-title {
+  margin-top: 1.55rem;
+}
+
+.highlight-box,
+.hero-console,
+.profile-panel,
+.capability-card,
+.visual-card,
+.log-card,
+.system-card,
+.dossier-card,
+.stack-panel,
+.contact-panel,
+.contact-media {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.highlight-box {
+  padding: 1rem;
+}
+
+.highlight-label,
+.console-kicker,
+.capability-kicker {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  color: var(--cyan-soft);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.highlight-box strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font: 700 1.08rem/1.2 "Bahnschrift Local", "Trebuchet MS", sans-serif;
+}
+
+.highlight-box p {
+  color: var(--text-soft);
+}
+
+.hero-stage {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 1rem;
+  align-items: stretch;
+  margin-top: -0.35rem;
+}
+
+.hero-portrait,
+.hero-shot,
+.gallery-card,
+.system-media,
+.contact-media,
+.visual-card,
+.capability-card img {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.hero-portrait,
+.hero-shot {
+  position: relative;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: var(--shadow);
+}
+
+.hero-portrait {
+  grid-row: span 2;
+  min-height: 34rem;
+}
+
+.hero-shot-control {
+  min-height: 15rem;
+}
+
+.hero-shot-plc {
+  min-height: 12rem;
+}
+
+.hero-stage img,
+.gallery-card img,
+.visual-card img,
+.system-media img,
+.contact-media img,
+.capability-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visual-card figcaption {
+  position: absolute;
+  left: 0.8rem;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 12px;
+  background: rgba(5, 10, 14, 0.72);
+  backdrop-filter: blur(12px);
+  font: 700 0.76rem/1.2 "Bahnschrift Local", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-portrait figcaption,
+.hero-shot figcaption {
+  position: absolute;
+  left: 0.85rem;
+  right: 0.85rem;
+  bottom: 0.85rem;
+  padding: 0.58rem 0.72rem;
+  border-radius: 12px;
+  background: rgba(5, 10, 14, 0.7);
+  backdrop-filter: blur(12px);
+  font: 700 0.76rem/1.2 "Bahnschrift Local", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-console {
+  grid-column: 1 / -1;
+  padding: 1.15rem;
+}
+
+.console-list {
+  display: grid;
+  gap: 0.78rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.console-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.7rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.console-list li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.console-list span {
+  min-width: 4.3rem;
+  color: var(--amber-soft);
+  font: 700 0.8rem/1.2 "Bahnschrift Local", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.scanline-strip {
+  overflow: hidden;
+  padding: 0.95rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(5, 10, 14, 0.92);
+}
+
+.scanline-track {
+  display: flex;
+  gap: 1rem;
+  min-width: max-content;
+  padding-left: 1rem;
+  animation: marquee 34s linear infinite;
+}
+
+.scanline-track span {
+  padding: 0.58rem 0.92rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-soft);
+  font: 700 0.84rem/1 "Bahnschrift Local", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-headline {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.section-index {
+  color: rgba(255, 255, 255, 0.14);
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: 0.9;
+}
+
+.section-headline h2 {
+  margin-bottom: 0.85rem;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 0.96;
+}
+
+.profile-board {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.profile-text {
+  padding: 1.5rem;
+}
+
+.profile-text p + p {
+  margin-top: 1rem;
+}
+
+.profile-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.3rem;
+}
+
+.profile-metrics article {
+  padding: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.profile-metrics strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font: 700 1rem/1.2 "Bahnschrift Local", "Trebuchet MS", sans-serif;
+}
+
+.profile-metrics span {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
+.profile-gallery {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 1rem;
+}
+
+.gallery-card {
+  min-height: 15rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: var(--shadow);
+}
+
+.gallery-card-large {
+  grid-row: span 2;
+  min-height: 31rem;
+}
+
+.capability-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.capability-card {
+  overflow: hidden;
+}
+
+.capability-card img {
+  height: 14rem;
+}
+
+.capability-card > div {
+  padding: 1.15rem;
+}
+
+.capability-card h3 {
+  margin-bottom: 0.45rem;
+  font-size: 1.28rem;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.experience-visuals {
+  display: grid;
+  gap: 1rem;
+  height: 100%;
+  align-self: stretch;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.visual-card {
+  min-height: 0;
+  position: relative;
+}
+
+.experience-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.log-card {
+  padding: 1.35rem;
+}
+
+.log-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+}
+
+.log-company,
+.log-date,
+.system-meta,
+.system-subtitle,
+.dossier-date,
+.dossier-title,
+.stack-title {
+  color: var(--amber-soft);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.log-company {
+  margin-bottom: 0.45rem;
+  color: var(--cyan-soft);
+}
+
+.log-card h3,
+.system-card h3,
+.dossier-card h3 {
+  margin-bottom: 0.45rem;
+  font-size: 1.34rem;
+}
+
+.log-summary {
+  margin-top: 0.85rem;
+}
+
+.detail-list {
+  margin-top: 1rem;
+}
+
+.detail-list li + li {
+  margin-top: 0.58rem;
+}
+
+.detail-list li::marker {
+  color: var(--amber-soft);
+}
+
+.log-note {
+  margin-top: 1rem;
+  padding: 0.95rem 1rem;
+  border-left: 3px solid var(--amber);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.systems-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.system-card {
+  display: grid;
+  grid-template-columns: 0.96fr 1.04fr;
+  gap: 1rem;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.system-card-large {
+  grid-template-columns: 1.08fr 0.92fr;
+}
+
+.system-media {
+  min-height: 21rem;
+}
+
+.system-copy {
+  padding: 1.3rem 1.3rem 1.35rem 0;
+}
+
+.system-subtitle {
+  margin-bottom: 0.85rem;
+}
+
+.system-text {
+  margin-bottom: 0.2rem;
+}
+
+.formation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.dossier-card {
+  padding: 1.4rem;
+}
+
+.dossier-title {
+  margin-top: 0.2rem;
+}
+
+.dossier-text {
+  margin-top: 0.9rem;
+}
+
+.dossier-columns {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.dossier-columns h4 {
+  margin-bottom: 0.45rem;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.stack-panels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stack-panel {
+  padding: 1.1rem;
+}
+
+.stack-title {
+  margin-bottom: 0.8rem;
+}
+
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.chip-group span {
+  padding: 0.54rem 0.82rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  font: 700 0.8rem/1 "Bahnschrift Local", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.language-list {
+  display: grid;
+  gap: 0.78rem;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.language-item:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.88fr 1.12fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.contact-panel {
+  padding: 1.35rem;
+}
+
+.contact-links {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-links a {
+  padding: 0.82rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.contact-visuals {
+  display: grid;
+  grid-template-columns: 0.86fr 1.14fr;
+  gap: 1rem;
+}
+
+.contact-media {
+  min-height: 22rem;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 0 2rem;
+  color: var(--text-faint);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 14px, 0);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1120px) {
+  .hero-shell,
+  .profile-board,
+  .experience-grid,
+  .formation-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stage,
+  .profile-gallery,
+  .contact-visuals {
+    width: 100%;
+  }
+
+  .stack-panels {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 920px) {
+  .topbar {
+    position: relative;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 26px;
+  }
+
+  .brand {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .topnav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    width: 100%;
+  }
+
+  .topnav .nav-link:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .nav-link {
+    min-height: 2.85rem;
+    padding: 0.72rem 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .topbar-cta {
+    justify-content: center;
+    align-self: center;
+    width: min(100%, 18rem);
+  }
+
+  .hero-highlights,
+  .capability-row,
+  .system-card {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-portrait,
+  .gallery-card-large,
+  .contact-media {
+    min-height: 24rem;
+  }
+
+  .hero-shell,
+  .section-headline {
+    gap: 1.25rem;
+  }
+
+  .section-headline {
+    grid-template-columns: 1fr;
+  }
+
+  .section-index {
+    font-size: 2.6rem;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .hero-contact {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-watermark {
+    top: 5.5rem;
+    font-size: clamp(3.6rem, 18vw, 7rem);
+    letter-spacing: 0.12em;
+  }
+
+  .hero-orb-a {
+    right: -5rem;
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .hero-orb-b {
+    left: -6rem;
+    width: 16rem;
+    height: 16rem;
+  }
+
+  .hero-stripes {
+    width: 16rem;
+    height: 16rem;
+    opacity: 0.1;
+  }
+
+  .experience-visuals {
+    grid-template-rows: none;
+    height: auto;
+  }
+
+  .visual-card {
+    min-height: 18rem;
+  }
+
+  .hero-portrait {
+    grid-row: span 1;
+  }
+
+  .console-list li {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .log-top,
+  .language-item,
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .log-top,
+  .language-item {
+    gap: 0.35rem;
+  }
+
+  .console-list span {
+    min-width: 0;
+  }
+
+  .system-copy {
+    padding: 0 1.2rem 1.2rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    position: sticky;
+    top: 0.35rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.55rem 0.7rem;
+    padding: 0.7rem;
+    border-radius: 22px;
+    text-align: left;
+  }
+
+  .brand {
+    justify-content: flex-start;
+    min-width: 0;
+  }
+
+  .brand-mark {
+    width: 2.35rem;
+    height: 2.35rem;
+    font-size: 0.92rem;
+  }
+
+  .brand-text strong {
+    font-size: 0.92rem;
+  }
+
+  .brand-text {
+    min-width: 0;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .topnav,
+  .topbar-cta {
+    display: none;
+  }
+
+  .topbar.is-open {
+    border-radius: 24px;
+    padding-bottom: 0.95rem;
+  }
+
+  .topbar.is-open .topnav {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+    width: 100%;
+    padding-top: 0.2rem;
+  }
+
+  .topbar.is-open .topbar-cta {
+    display: inline-flex;
+    grid-column: 1 / -1;
+    justify-content: center;
+    width: 100%;
+    min-height: 3rem;
+  }
+
+  .topbar.is-open .menu-toggle-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .topbar.is-open .menu-toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .topbar.is-open .menu-toggle-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .nav-link {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.88rem 1rem;
+    border-radius: 16px;
+    font-size: 0.76rem;
+    letter-spacing: 0.09em;
+    justify-content: flex-start;
+    white-space: normal;
+  }
+
+  .hero-highlights,
+  .profile-metrics,
+  .stack-panels {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-gallery {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .gallery-card-large {
+    grid-row: auto;
+    min-height: 14.5rem;
+  }
+
+  .gallery-card {
+    min-height: 14.5rem;
+  }
+
+  .experience-visuals,
+  .contact-visuals {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    height: auto;
+  }
+
+  .visual-card,
+  .contact-media {
+    min-height: 14.5rem;
+  }
+
+  .hero-shell {
+    gap: 1.35rem;
+  }
+
+  .hero-stage {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    margin-top: 0;
+  }
+
+  .hero-portrait {
+    grid-row: auto;
+    min-height: 22rem;
+  }
+
+  .hero-shot-control,
+  .hero-shot-plc {
+    min-height: 11.5rem;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    min-height: 3.2rem;
+  }
+
+  .hero-contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  .hero-contact li {
+    padding: 0.88rem 1rem;
+    border-radius: 18px;
+  }
+
+  .log-card,
+  .system-copy,
+  .dossier-card,
+  .stack-panel,
+  .contact-panel,
+  .profile-text {
+    padding: 1.2rem;
+  }
+
+  .log-card h3,
+  .system-card h3,
+  .dossier-card h3 {
+    font-size: 1.26rem;
+  }
+
+  .detail-list li + li {
+    margin-top: 0.72rem;
+  }
+
+  .contact-links {
+    gap: 0.85rem;
+  }
+
+  .contact-links a {
+    padding: 0.95rem 1rem;
+    border-radius: 18px;
+  }
+
+  .capability-card img {
+    height: 12.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --content-width: min(100vw - 1.2rem, 100vw - 1.2rem);
+  }
+
+  .topbar,
+  .footer {
+    width: calc(100vw - 1.2rem);
+  }
+
+  .hero {
+    padding: 1.15rem 0 1.6rem;
+  }
+
+  .section {
+    padding: 4.35rem 0;
+  }
+
+  h1 {
+    max-width: none;
+    margin-bottom: 1rem;
+    font-size: clamp(2.45rem, 11.5vw, 3.85rem);
+    line-height: 0.94;
+  }
+
+  .brand-text small,
+  .hero-watermark {
+    display: none;
+  }
+
+  .brand {
+    gap: 0.7rem;
+  }
+
+  .brand-text strong {
+    font-size: 0.95rem;
+  }
+
+  .topbar {
+    margin-top: 0.45rem;
+    gap: 0.45rem 0.65rem;
+    padding: 0.68rem;
+    border-radius: 18px;
+  }
+
+  .menu-toggle {
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 14px;
+  }
+
+  .hero-shell {
+    gap: 1.55rem;
+  }
+
+  .hero-main {
+    order: 1;
+  }
+
+  .eyebrow {
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-actions {
+    margin: 0.35rem 0 0;
+  }
+
+  .hero-values-title {
+    margin-top: 0.8rem;
+  }
+
+  .hero-highlights {
+    gap: 0.9rem;
+    margin-top: 0.8rem;
+  }
+
+  .hero-stage {
+    order: 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .hero-portrait {
+    grid-column: 1 / -1;
+    min-height: 18.5rem;
+  }
+
+  .hero-shot-control,
+  .hero-shot-plc {
+    min-height: 10.2rem;
+  }
+
+  .hero-console {
+    display: none;
+  }
+
+  .section-headline {
+    gap: 0.75rem;
+    margin-bottom: 1.65rem;
+  }
+
+  .section-index {
+    font-size: 2.1rem;
+  }
+
+  .section-headline h2 {
+    font-size: clamp(1.85rem, 8vw, 2.35rem);
+    line-height: 1.02;
+  }
+
+  .hero-lead,
+  .section-intro,
+  .profile-text p,
+  .detail-list,
+  .log-summary,
+  .log-note,
+  .system-text,
+  .dossier-text,
+  .contact-links a {
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  .hero-status {
+    display: flex;
+    margin-top: 0.15rem;
+    padding: 0.82rem 0.95rem;
+    font-size: 0.79rem;
+    line-height: 1.55;
+  }
+
+  .hero-highlights,
+  .profile-metrics,
+  .stack-panels {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-metrics article:last-child,
+  .stack-panels .stack-panel:last-child {
+    grid-column: auto;
+  }
+
+  .profile-gallery,
+  .experience-visuals,
+  .contact-visuals {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .gallery-card-large {
+    grid-row: auto;
+    min-height: 12rem;
+  }
+
+  .gallery-card,
+  .visual-card,
+  .system-media,
+  .contact-media {
+    min-height: 12rem;
+  }
+
+  .system-media {
+    min-height: 14rem;
+  }
+
+  .experience-stack {
+    order: 1;
+  }
+
+  .experience-visuals {
+    order: 2;
+  }
+
+  .capability-card img {
+    height: 11.25rem;
+  }
+
+  .highlight-box,
+  .profile-text,
+  .log-card,
+  .system-copy,
+  .dossier-card,
+  .stack-panel,
+  .contact-panel {
+    padding: 1.1rem;
+  }
+
+  .footer {
+    gap: 0.5rem;
+    font-size: 0.74rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .topbar {
+    padding: 0.56rem;
+    border-radius: 16px;
+  }
+
+  .brand-mark {
+    width: 2.15rem;
+    height: 2.15rem;
+    font-size: 0.84rem;
+  }
+
+  .brand-text strong {
+    font-size: 0.84rem;
+  }
+
+  .menu-toggle {
+    width: 2.45rem;
+    height: 2.45rem;
+    border-radius: 12px;
+  }
+
+  .nav-link {
+    min-height: 2.8rem;
+    padding: 0.8rem 0.9rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  .section {
+    padding: 3.9rem 0;
+  }
+
+  h1 {
+    font-size: clamp(2.1rem, 13vw, 3.15rem);
+  }
+
+  .hero-stage,
+  .hero-highlights,
+  .profile-gallery,
+  .experience-visuals,
+  .contact-visuals {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-portrait,
+  .gallery-card-large,
+  .contact-media {
+    grid-row: auto;
+    min-height: 11rem;
+  }
+
+  .hero-portrait {
+    min-height: 16rem;
+  }
+
+  .hero-shot-control,
+  .hero-shot-plc {
+    min-height: 9.4rem;
+  }
+
+  .gallery-card,
+  .visual-card,
+  .system-media,
+  .contact-media {
+    min-height: 10.2rem;
+  }
+
+  .highlight-box,
+  .profile-text,
+  .log-card,
+  .system-copy,
+  .dossier-card,
+  .stack-panel,
+  .contact-panel {
+    padding: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title id="title">Siemens S7 panel</title>
+  <desc id="desc">Stylized Siemens S7-1200 and S7-1500 industrial card.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#041117"/>
+      <stop offset="1" stop-color="#083f49"/>
+    </linearGradient>
+    <linearGradient id="rack" x1="0" x2="1">
+      <stop offset="0" stop-color="#0ee0d0"/>
+      <stop offset="1" stop-color="#5cf2ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="34" fill="url(#bg)"/>
+  <g opacity=".14" stroke="#9cecff">
+    <path d="M40 92h560"/>
+    <path d="M40 152h560"/>
+    <path d="M40 212h560"/>
+    <path d="M40 272h560"/>
+    <path d="M40 332h560"/>
+    <path d="M120 32v356"/>
+    <path d="M240 32v356"/>
+    <path d="M360 32v356"/>
+    <path d="M480 32v356"/>
+  </g>
+  <text x="50" y="86" fill="#73ffe5" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" letter-spacing="5">SIEMENS</text>
+  <text x="50" y="132" fill="#d5faff" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="4">S7-1200 / S7-1500</text>
+  <g transform="translate(56 190)">
+    <rect width="116" height="126" rx="16" fill="#062b31" stroke="url(#rack)" stroke-width="2"/>
+    <rect x="12" y="14" width="72" height="24" rx="6" fill="#0de4d3" opacity=".85"/>
+    <circle cx="96" cy="28" r="8" fill="#7effee"/>
+    <circle cx="96" cy="54" r="8" fill="#ffb750"/>
+    <circle cx="96" cy="80" r="8" fill="#55d2ff"/>
+    <g fill="#99f7ff" opacity=".82">
+      <rect x="14" y="58" width="56" height="8" rx="4"/>
+      <rect x="14" y="76" width="56" height="8" rx="4"/>
+      <rect x="14" y="94" width="56" height="8" rx="4"/>
+    </g>
+  </g>
+  <g transform="translate(192 190)">
+    <rect width="88" height="126" rx="16" fill="#05242a" stroke="#1ddcd7" stroke-width="2"/>
+    <g fill="#8defff">
+      <rect x="16" y="22" width="56" height="10" rx="5"/>
+      <rect x="16" y="48" width="56" height="10" rx="5"/>
+      <rect x="16" y="74" width="56" height="10" rx="5"/>
+      <rect x="16" y="100" width="56" height="10" rx="5"/>
+    </g>
+  </g>
+  <g transform="translate(300 190)">
+    <rect width="88" height="126" rx="16" fill="#05242a" stroke="#1ddcd7" stroke-width="2"/>
+    <g fill="#8defff">
+      <rect x="16" y="22" width="56" height="10" rx="5"/>
+      <rect x="16" y="48" width="56" height="10" rx="5"/>
+      <rect x="16" y="74" width="56" height="10" rx="5"/>
+      <rect x="16" y="100" width="56" height="10" rx="5"/>
+    </g>
+  </g>
+  <g transform="translate(420 176)">
+    <path d="M0 108h54l36-46h50l34-42h46" fill="none" stroke="#ffb750" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="0" cy="108" r="12" fill="#ffb750"/>
+    <circle cx="90" cy="62" r="12" fill="#73ffe5"/>
+    <circle cx="174" cy="20" r="12" fill="#55d2ff"/>
+    <text x="2" y="158" fill="#d5faff" font-family="Arial, Helvetica, sans-serif" font-size="20" letter-spacing="3">PLC LOGIC</text>
+  </g>
+</svg>

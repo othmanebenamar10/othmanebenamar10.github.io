@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="title desc">
+  <title id="title">Profinet network card</title>
+  <desc id="desc">Stylized Profinet industrial network card.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#071013"/>
+      <stop offset="1" stop-color="#0d2d28"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="34" fill="url(#bg)"/>
+  <text x="56" y="90" fill="#9efade" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" letter-spacing="6">PROFINET</text>
+  <text x="58" y="130" fill="#d9fff3" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="4">INDUSTRIAL ETHERNET</text>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M122 272h112l70-76h92l74-80h72" stroke="#8bf0ff" stroke-width="10"/>
+    <path d="M122 272v60h366" stroke="#ffb750" stroke-width="8"/>
+    <path d="M304 196v132" stroke="#55d2ff" stroke-width="8"/>
+  </g>
+  <g fill="#0d1d1c" stroke-width="3">
+    <rect x="78" y="244" width="88" height="56" rx="14" stroke="#8bf0ff"/>
+    <rect x="260" y="160" width="88" height="56" rx="14" stroke="#8bf0ff"/>
+    <rect x="438" y="84" width="88" height="56" rx="14" stroke="#8bf0ff"/>
+    <rect x="444" y="304" width="96" height="56" rx="14" stroke="#ffb750"/>
+  </g>
+  <g fill="#cffff2" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="3">
+    <text x="96" y="278">PLC</text>
+    <text x="268" y="194">I/O</text>
+    <text x="450" y="118">HMI</text>
+    <text x="458" y="338">DRIVE</text>
+  </g>
+</svg>
